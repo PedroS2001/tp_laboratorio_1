@@ -19,6 +19,7 @@ int main()
     do
     {
         printf("**MENU**\n1)Ingresar 1er operando (A=%d)\n2)Ingresar 2do operando (B=%d)\n3)Calcular todas las operaciones(Suma,resta,multiplicacion,division,factorial)\n4)Informar resultados\n5)Salir\nSu Opcion: ",A,B);
+        fflush(stdin);
         scanf("%d",&opcion);
         switch(opcion)
         {
@@ -53,7 +54,7 @@ int main()
         case 4:
             if(corrector == 1)
             {
-                printf("El resultado de %d + %d es %d\n",A,B,rsuma);
+                printf("\nEl resultado de %d + %d es %d\n",A,B,rsuma);
                 printf("El resultado de %d - %d es %d\n",A,B,rresta);
                 if(rdivision==-1)
                 {
@@ -90,6 +91,8 @@ int main()
                 printf("\nPrimero debe realizar las operaciones.\n\n");
             }
             break;
+            default:
+                printf("\nINGRESE UNA OPCION CORRECTA\n\n");
         }
         system("pause");
         system("cls");
