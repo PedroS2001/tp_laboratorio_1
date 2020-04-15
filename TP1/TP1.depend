@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1586989993 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\tp1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"biblioteca.h"
+
+1586985750 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\tp1\biblioteca.h
+
+1586988200 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\tp1\biblioteca.c
+	<stdio.h>
+	<stdlib.h>
+
