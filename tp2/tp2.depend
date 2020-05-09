@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1589046242 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\tp2\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+	"utn.h"
+	"datoshardcode.h"
+
+1589046139 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+	"utn.h"
+
+1589045267 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\tp2\arrayemployees.h
+
+1589044494 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\tp2\datoshardcode.h
+
+1589041257 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\tp2\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1589039782 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\tp2\utn.h
+
