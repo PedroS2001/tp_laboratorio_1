@@ -183,7 +183,7 @@ int removeEmployee(eEmployee* list, int len, int id)
                 scanf("%c",&rta);
                 if(rta=='s')
                 {
-                    list[indice].isEmpty = -1;
+                    list[indice].isEmpty = 1;
                     printf("Empleado eliminado\n");
                 }
                 else if(rta=='n')

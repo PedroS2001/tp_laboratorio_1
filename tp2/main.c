@@ -28,13 +28,13 @@ int main()
     int flagCarga=0;
 
     initEmployees(empleados,TAM);
-
+    /*
     if(hardcodearEmpleados(empleados,HC)==0) //Esto se descomenta si quiero hardcodear. La cantidad se asigna en el define.
     {                                       // Aumenta el proximo ID y desbloquea las opciones de modificar,baja y informes
         proximoId += HC;
         flagCarga = 1;
     }
-
+    */
     do
     {
         respuesta = menu();
