@@ -31,7 +31,10 @@ void listarUnEmpleado(LinkedList* pArrayListEmployee,int id)
             employee_getSueldo(empleado,&auxSueldo);
             employee_getNombre(empleado,auxNombre);
 
-            printf("%4d  %10s %10d  %15d\n", auxId, auxNombre, auxHoras, auxSueldo);
+            printf("  Id           Nombre   Horas trabajadas   Sueldo \n");
+            printf("--------------------------------------------------------------\n");
+            printf("%4d  %15s %10d  %15d\n", auxId, auxNombre, auxHoras, auxSueldo);
+            printf("---------------------------------------------------------------\n");
             break;
         }
     }
@@ -104,6 +107,8 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
     char auxNombre[128] ;
 
     int proximoId = ll_len(pArrayListEmployee) +1;
+    system("cls");
+    printf("*****ALTA EMPLEADO*****\n\n");
 
     auxId = proximoId;
     utn_getNombre(auxNombre,128,"Ingrese el nombre: ","Nombre invalido\n",2);
@@ -151,6 +156,8 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
 
     if(pArrayListEmployee != NULL)
     {
+        system("cls");
+        printf("*****MODIFICAR EMPLEADO*****\n\n");
         retorno = 0;
         printf("Hay %d empleados\n",tam);
         utn_getNumero(&auxId,"Ingrese el id del empleado a modificar: ","No se encuentra un empleado con ese id\n",1,tam,2);
@@ -163,7 +170,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
             employee_getId(empleado,&idEmpleado);
             if( auxId == idEmpleado )
             {
-                printf("1)Nombre\n");
+                printf("\n1)Nombre\n");
                 printf("2)Horas trabajadas\n");
                 printf("3)Sueldo\n");
                 printf("4)Cancelar\n");
@@ -211,6 +218,8 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
 
     if(pArrayListEmployee !=NULL)
     {
+        system("cls");
+        printf("*****BAJA EMPLEADO*****\n\n");
         printf("Hay %d empleados\n",tam);
         utn_getNumero(&idAux,"ingrese ID  a remover: ","No se encuentra nadie con ese ID\n",1,tam,2);
         retorno = 0;
@@ -267,7 +276,7 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
     {
         if(tamanio > 0)
         {
-            printf(" Id      Nombre   Horas trabajadas   Sueldo \n");
+            printf("  Id           Nombre   Horas trabajadas   Sueldo \n");
 
             for(i = 0; i < tamanio; i++)
             {
@@ -276,7 +285,7 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
                 employee_getNombre(auxiliar,nombre);
                 employee_getHorasTrabajadas(auxiliar,&horasTrabajadas);
                 employee_getSueldo(auxiliar,&sueldo);
-                printf("%4d  %10s %10d  %15d\n",id, nombre, horasTrabajadas, sueldo);
+                printf("%4d  %15s %10d  %15d\n",id, nombre, horasTrabajadas, sueldo);
 
             }
             retorno = 0;
@@ -304,6 +313,8 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
     if(pArrayListEmployee!= NULL)
     {
         retorno = 0;
+        system("cls");
+        printf("*****ORDENAR EMPLEADOS*****\n\n");
 
         printf("1)Ordenar por id\n");
         printf("2)Ordenar por nombre\n");
@@ -314,19 +325,19 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
         switch(respuesta)
         {
         case 1:
-            utn_getNumero(&rtaOrden,"ORDEN:\n1)Ascendente \n0)Descendente\n","ERROR\n",0,1,2);
+            utn_getNumero(&rtaOrden,"\nORDEN:\n1)Ascendente \n0)Descendente\n","ERROR\n",0,1,2);
             ll_sort(pArrayListEmployee,employee_ordenarPorId,rtaOrden);
             break;
         case 2:
-            utn_getNumero(&rtaOrden,"ORDEN:\n1)Ascendente \n0)Descendente\n","ERROR\n",0,1,2);
+            utn_getNumero(&rtaOrden,"\nORDEN:\n1)Ascendente \n0)Descendente\n","ERROR\n",0,1,2);
             ll_sort(pArrayListEmployee,employee_ordenarPorNombre,rtaOrden);
             break;
         case 3:
-            utn_getNumero(&rtaOrden,"ORDEN:\n1)Ascendente \n0)Descendente\n","ERROR\n",0,1,2);
+            utn_getNumero(&rtaOrden,"\nORDEN:\n1)Ascendente \n0)Descendente\n","ERROR\n",0,1,2);
             ll_sort(pArrayListEmployee,employee_ordenarPorHorasTrabajadas,rtaOrden);
             break;
         case 4:
-            utn_getNumero(&rtaOrden,"ORDEN:\n1)Ascendente \n0)Descendente\n","ERROR\n",0,1,2);
+            utn_getNumero(&rtaOrden,"\nORDEN:\n1)Ascendente \n0)Descendente\n","ERROR\n",0,1,2);
             ll_sort(pArrayListEmployee,employee_ordenarPorSueldo,rtaOrden);
             break;
         }
