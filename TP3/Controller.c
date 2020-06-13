@@ -5,10 +5,16 @@
 #include "parser.h"
 #include "utn.h"
 
-void listarUnEmpleado(LinkedList* lista,int indice)
+/** \brief imprime un empleado en particular
+ *
+ * \param   el linkedlist de empleados
+ * \param   id del empleado que quiero mostrar
+ */
+
+void listarUnEmpleado(LinkedList* pArrayListEmployee,int id)
 {
     Employee* empleado = (Employee*) employee_new();
-    int tam = ll_len(lista);
+    int tam = ll_len(pArrayListEmployee);
 
     int auxId ;
     int auxHoras ;
@@ -17,9 +23,9 @@ void listarUnEmpleado(LinkedList* lista,int indice)
 
     for(int i=0; i<tam; i++)
     {
-        empleado = ll_get(lista, i);
+        empleado = ll_get(pArrayListEmployee, i);
         employee_getId(empleado,&auxId);
-        if(auxId == indice)
+        if(auxId == id)
         {
             employee_getHorasTrabajadas(empleado,&auxHoras);
             employee_getSueldo(empleado,&auxSueldo);
@@ -146,7 +152,9 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
     if(pArrayListEmployee != NULL)
     {
         retorno = 0;
+        printf("Hay %d empleados\n",tam);
         utn_getNumero(&auxId,"Ingrese el id del empleado a modificar: ","No se encuentra un empleado con ese id\n",1,tam,2);
+
         listarUnEmpleado(pArrayListEmployee,auxId);
 
         for( i=0; i<tam; i++)
@@ -203,6 +211,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
 
     if(pArrayListEmployee !=NULL)
     {
+        printf("Hay %d empleados\n",tam);
         utn_getNumero(&idAux,"ingrese ID  a remover: ","No se encuentra nadie con ese ID\n",1,tam,2);
         retorno = 0;
         for(i=0; i<tam; i++)
@@ -383,7 +392,7 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
 int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
 {
     int retorno = -1;
-    int listLen = ll_len(pArrayListEmployee);
+    int tam = ll_len(pArrayListEmployee);
     int i;
     Employee* auxiliar;
     FILE* pArchivo = fopen(path,"wb");
@@ -393,10 +402,10 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
         if(pArrayListEmployee != NULL)
         {
             retorno = 0;
-            for(i = 0; i < listLen; i++)
+            for(i = 0; i < tam; i++)
             {
-                auxiliar = (Employee*)ll_get(pArrayListEmployee, i);
-                fwrite(auxiliar,sizeof(Employee), 1, pArchivo);
+                auxiliar = (Employee*) ll_get(pArrayListEmployee, i);
+                fwrite(auxiliar,sizeof(Employee),1, pArchivo);
             }
             printf("Archivo guardado\n");
         }

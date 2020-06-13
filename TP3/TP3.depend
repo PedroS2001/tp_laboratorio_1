@@ -98,3 +98,48 @@
 
 1533133022 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp3_cascara\win_32\parser.h
 
+1592073489 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp3_cascara\tp3\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+	"utn.h"
+
+1592070574 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp3_cascara\tp3\employee.h
+
+1588458158 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp3_cascara\tp3\utn.h
+
+1592007614 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp3_cascara\tp3\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1533133022 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp3_cascara\tp3\linkedlist.h
+
+1589037373 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp3_cascara\tp3\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1592072503 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp3_cascara\tp3\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"utn.h"
+
+1533133022 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp3_cascara\tp3\parser.h
+
+1592073729 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp3_cascara\tp3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"utn.h"
+
+1592070636 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp3_cascara\tp3\controller.h
+

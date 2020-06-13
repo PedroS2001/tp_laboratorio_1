@@ -46,7 +46,7 @@ int main()
             break;
 
         case 3:
-            if( flagCarga &&!controller_addEmployee(listaEmpleados))
+            if( flagCarga && !controller_addEmployee(listaEmpleados))
             {
                 printf("Se dio de alta al empleado\n");
             }
@@ -58,12 +58,26 @@ int main()
             break;
 
         case 4:
-            controller_editEmployee(listaEmpleados);
+            if(flagCarga)
+            {
+                controller_editEmployee(listaEmpleados);
+            }
+            else
+            {
+                printf("Primero debe cargar el archivo\n");
+            }
 
             break;
 
         case 5:
-            controller_removeEmployee(listaEmpleados);
+            if(flagCarga)
+            {
+                controller_removeEmployee(listaEmpleados);
+            }
+            else
+            {
+                printf("Error al intentar eliminar el empleado. Cargue el archivo\n");
+            }
 
             break;
 
@@ -82,13 +96,10 @@ int main()
             if( flagCarga && !controller_sortEmployee(listaEmpleados))
             {
                 printf("Empleados ordenados\n");
-
-
             }
             else
             {
                 printf("No se pudieron ordenar los empleados\n");
-
             }
 
             break;
@@ -100,7 +111,7 @@ int main()
             }
             else
             {
-                printf("Error al guardar los datos en \"data.csv\" en modo texto\n");
+                printf("No se pudo guardar los datos en \"data.csv\" en modo texto\n");
             }
             break;
 
@@ -111,7 +122,7 @@ int main()
             }
             else
             {
-                printf("Error al guardar los datos en \"data.bin\" en modo binario\n");
+                printf("No se pudo guardar los datos en \"data.bin\" en modo binario\n");
             }
             break;
 

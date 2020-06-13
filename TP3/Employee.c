@@ -6,12 +6,25 @@
 
 static int isValidName(char* cadena,int longitud);
 
+/** \brief Asigna lugar en memoria para un empleado
+ *
+ * \return puntero al lugar de memoria
+ */
+
 Employee* employee_new()
 {
     Employee* auxiliarP;
     auxiliarP = (Employee*) malloc(sizeof(Employee));
     return auxiliarP;
 }
+
+/** \brief Asigna lugar en memoria para un empleado al que se le pasan los parametros
+ *  \param Id del empleado
+ *  \param nombre del empleado
+ *  \param horas trabajadas por el empleado
+ *  \param sueldo del empleado
+ * \return puntero al lugar de memoria
+ */
 
 Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr, char* sueldoStr)
 {
@@ -30,6 +43,12 @@ Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajad
     return this;
 }
 
+/** \brief elimina un empleado
+ *
+ * \param el empleado a eliminar
+ *
+ */
+
 void employee_delete(Employee* this)
 {
     if(this != NULL)
@@ -39,6 +58,13 @@ void employee_delete(Employee* this)
     }
 }
 
+/** \brief Comprueba que el id sea valido y lo asigna al empleado
+ *
+ * \param   empleado al que se le asigna el id
+ * \param el id a asignarle
+ * \return 0 si salio bien y -1 si no
+ *
+ */
 int employee_setId(Employee* this,int id)
 {
     int retorno = -1;
@@ -49,6 +75,14 @@ int employee_setId(Employee* this,int id)
     }
     return retorno;
 }
+
+/** \brief Obtiene el id de un empleado
+ *
+ * \param   empleado al que se le busca el id
+ * \param   el lugar donde asignar el id leido
+ * \return 0 si salio bien y -1 si no
+ *
+ */
 int employee_getId(Employee* this,int* id)
 {
     int retorno = -1;
@@ -60,6 +94,13 @@ int employee_getId(Employee* this,int* id)
     return retorno;
 }
 
+/** \brief Comprueba que el nombre sea valido y lo asigna al empleado
+ *
+ * \param   empleado al que se le asigna el nobmre
+ * \param el nombre a asignarle
+ * \return 0 si salio bien y -1 si no
+ *
+ */
 int employee_setNombre(Employee* this,char* nombre)
 {
     int retorno = -1;
@@ -73,6 +114,14 @@ int employee_setNombre(Employee* this,char* nombre)
     }
     return retorno;
 }
+
+/** \brief Obtiene el nombre de un empleado
+ *
+ * \param   empleado al que se le busca el nombre
+ * \param   el lugar donde poner el nombre leido
+ * \return 0 si salio bien y -1 si no
+ *
+ */
 int employee_getNombre(Employee* this,char* nombre)
 {
     int retorno = -1;
@@ -84,6 +133,13 @@ int employee_getNombre(Employee* this,char* nombre)
     return retorno;
 }
 
+/** \brief Comprueba que las horas trabajadas sean validas y lo asigna al empleado
+ *
+ * \param   empleado al que se le asigna las horas trabajadas
+ * \param  las horas trabajadas a asignarle
+ * \return 0 si salio bien y -1 si no
+ *
+ */
 int employee_setHorasTrabajadas(Employee* this,int horasTrabajadas)
 {
     int retorno = -1;
@@ -93,8 +149,15 @@ int employee_setHorasTrabajadas(Employee* this,int horasTrabajadas)
         this->horasTrabajadas = horasTrabajadas;
     }
     return retorno;
-
 }
+
+/** \brief Obtiene las horas trabajadas de un empleado
+ *
+ * \param   empleado al que se le busca las horas trabajadas
+ * \param   el lugar donde poner el las horas leidas
+ * \return 0 si salio bien y -1 si no
+ *
+ */
 int employee_getHorasTrabajadas(Employee* this,int* horasTrabajadas)
 {
     int retorno = -1;
@@ -107,6 +170,13 @@ int employee_getHorasTrabajadas(Employee* this,int* horasTrabajadas)
 
 }
 
+/** \brief Comprueba que el sueldo sea valido y lo asigna al empleado
+ *
+ * \param   empleado al que se le asigna el sueldo
+ * \param el sueldo a asignarle
+ * \return 0 si salio bien y -1 si no
+ *
+ */
 int employee_setSueldo(Employee* this,int sueldo)
 {
     int retorno = -1;
@@ -116,8 +186,15 @@ int employee_setSueldo(Employee* this,int sueldo)
         this->sueldo = sueldo;
     }
     return retorno;
-
 }
+
+/** \brief Obtiene el sueldo de un empleado
+ *
+ * \param   empleado al que se le busca el sueldo
+ * \param   el lugar donde poner el sueldo leido
+ * \return 0 si salio bien y -1 si no
+ *
+ */
 int employee_getSueldo(Employee* this,int* sueldo)
 {
     int retorno = -1;
@@ -127,9 +204,7 @@ int employee_getSueldo(Employee* this,int* sueldo)
         *sueldo = this->sueldo;
     }
     return retorno;
-
 }
-
 
 /**
  * \brief Verifica si la cadena ingresada es un nombre valido
@@ -156,6 +231,13 @@ static int isValidName(char* cadena,int longitud)
     return retorno;
 }
 
+/** \brief ordena los empleados por id
+ *
+ * \param primer elemento a ordenar
+ * \param segundo elemento a ordenar
+ * \return 1 si el primer elemento es mayor, -1 si el segundo elemento es mayor o 0 si son iguales
+ *
+ */
 int employee_ordenarPorId(void* item1, void* item2)
 {
     int retorno;
@@ -181,6 +263,13 @@ int employee_ordenarPorId(void* item1, void* item2)
     return retorno;
 }
 
+/** \brief ordena los empleados por nombre
+ *
+ * \param primer elemento a ordenar
+ * \param segundo elemento a ordenar
+ * \return 1 si el primer elemento es mayor, -1 si el segundo elemento es mayor o 0 si son iguales
+ *
+ */
 int employee_ordenarPorNombre(void* item1, void* item2)
 {
     int retorno;
@@ -195,6 +284,13 @@ int employee_ordenarPorNombre(void* item1, void* item2)
     return retorno;
 }
 
+/** \brief ordena los empleados por sueldo
+ *
+ * \param primer elemento a ordenar
+ * \param segundo elemento a ordenar
+ * \return 1 si el primer elemento es mayor, -1 si el segundo elemento es mayor o 0 si son iguales
+ *
+ */
 int employee_ordenarPorSueldo(void* item1, void* item2)
 {
     int retorno;
@@ -220,6 +316,13 @@ int employee_ordenarPorSueldo(void* item1, void* item2)
     return retorno;
 }
 
+/** \brief ordena los empleados por horas trabajadas
+ *
+ * \param primer elemento a ordenar
+ * \param segundo elemento a ordenar
+ * \return 1 si el primer elemento es mayor, -1 si el segundo elemento es mayor o 0 si son iguales
+ *
+ */
 int employee_ordenarPorHorasTrabajadas(void* item1, void* item2)
 {
     int retorno;
@@ -241,7 +344,6 @@ int employee_ordenarPorHorasTrabajadas(void* item1, void* item2)
             retorno = 0;
         }
     }
-
     return retorno;
 }
 
