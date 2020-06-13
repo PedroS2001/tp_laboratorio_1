@@ -61,8 +61,6 @@ int parser_EmployeeFromBinary(FILE* pFile, LinkedList* pArrayListEmployee)
         fread(&auxiliar, sizeof(Employee), 1, pFile);//para saltearse la cabecera
         do
         {
-            fread(&auxiliar, sizeof(Employee), 1, pFile);
-
             nuevoEmpleado = employee_new();
             employee_setId(nuevoEmpleado,auxiliar.id);
             employee_setNombre(nuevoEmpleado,auxiliar.nombre);
@@ -70,7 +68,7 @@ int parser_EmployeeFromBinary(FILE* pFile, LinkedList* pArrayListEmployee)
             employee_setSueldo(nuevoEmpleado,auxiliar.sueldo);
 
             ll_add(pArrayListEmployee, nuevoEmpleado);
-
+            fread(&auxiliar, sizeof(Employee), 1, pFile);
         }
         while(!feof(pFile));
     }

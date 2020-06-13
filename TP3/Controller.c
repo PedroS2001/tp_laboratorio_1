@@ -72,16 +72,16 @@ int controller_loadFromText(char* path, LinkedList* pArrayListEmployee)
 int controller_loadFromBinary(char* path, LinkedList* pArrayListEmployee)
 {
     int retorno = -1;
-    FILE *pArchivo;
+    FILE *pArchivo = fopen(path, "rb");
 
-    if((pArchivo = fopen(path, "rb"))==NULL)
-    {
-        printf("No se pudo leer\n");
-    }
-    else
+    if( pArchivo != NULL )
     {
         retorno = 0;
         parser_EmployeeFromBinary(pArchivo, pArrayListEmployee);
+    }
+    else
+    {
+        printf("No se pudo leer\n");
     }
 
     return retorno;
