@@ -420,11 +420,13 @@ int ll_contains(LinkedList* this, void* pElement)
     int returnAux = -1;
     Node* nodo;
     int i;
+    int tam;
 
     if(this != NULL)
     {
+        tam = ll_len(this);
         returnAux = 0;
-        for(i=0; i<ll_len(this); i++)
+        for(i=0; i< tam; i++)
         {
             nodo = getNode(this,i);
             if(nodo->pElement == pElement)
@@ -459,16 +461,12 @@ int ll_containsAll(LinkedList* this,LinkedList* this2)
         while( i < ll_len(this2))
         {
             nodo1 = getNode(this2,i);
-            if(ll_contains(this,nodo1->pElement) == 1)
-            {
-                i++;
-                continue;
-            }
-            else
+            if(ll_contains(this,nodo1->pElement) == 0)
             {
                 returnAux = 0;
                 break;
             }
+            i++;
         }
     }
 
@@ -488,16 +486,19 @@ int ll_containsAll(LinkedList* this,LinkedList* this2)
 LinkedList* ll_subList(LinkedList* this,int from,int to)
 {
     LinkedList* cloneArray = NULL;
-    int tam = ll_len(this);
+    int tam;
     int i;
     void* pElement;
-
+    if(this != NULL)
+    {
+        tam = ll_len(this);
+    }
     if(this != NULL && from >= 0 && from <= tam && to > from && to <= tam)
     {
         cloneArray = ll_newLinkedList();
         if(cloneArray != NULL)
         {
-            for(i=from; i<=to; i++)
+            for(i=from; i<to; i++)
             {
                 pElement = ll_get(this,i);
                 ll_add(cloneArray, pElement);
@@ -543,39 +544,34 @@ int ll_sort(LinkedList* this, int (*pFunc)(void*,void*), int order)
     int returnAux =-1;
     int i;
     int j;
-    Node* nodo1;
-    Node* nodo2;
-    Node* auxNode;
+    int tam;
+    void* auxElement;
 
     if(this != NULL && pFunc != NULL && (order==0 || order ==1))
     {
         returnAux = 0;
+        tam = ll_len(this);
 
-        for(i=0; i<ll_len(this); i++)
+        for(i=0; i<tam-1; i++)
         {
-            nodo1 = getNode(this,i);
-
-            for(j=0; j<ll_len(this); j++)
+            for(j=i+1; j<tam; j++)
             {
-                nodo2 = getNode(this,j);
-
-                if(order == 1)
+                if(order == 0)
                 {
-
-                    if( pFunc(nodo1->pElement,nodo2->pElement) < 0 )
+                    if( pFunc(ll_get(this,i),ll_get(this,j)) < 0 )
                     {
-                        auxNode->pElement = nodo1->pElement;
-                        nodo1->pElement = nodo2->pElement;
-                        nodo2->pElement = auxNode->pElement;
+                        auxElement = ll_get(this,i);
+                        ll_set(this,i,ll_get(this,j));
+                        ll_set(this,j,auxElement) ;
                     }
                 }
                 else
                 {
-                    if( pFunc(nodo1->pElement,nodo2->pElement) > 0 )
+                    if( pFunc(ll_get(this,i),ll_get(this,j)) > 0 )
                     {
-                        auxNode->pElement = nodo1->pElement;
-                        nodo1->pElement = nodo2->pElement;
-                        nodo2->pElement = auxNode->pElement;
+                        auxElement = ll_get(this,i);
+                        ll_set(this,i,ll_get(this,j));
+                        ll_set(this,j,auxElement);
                     }
                 }
             }
