@@ -1,0 +1,53 @@
+# depslib dependency file v1.0
+1593296379 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp4help\refacttp3\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"utn.h"
+
+1593300731 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp4help\refacttp3\linkedlist.h
+
+1593300751 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp4help\refacttp3\employee.h
+	"LinkedList.h"
+
+1592999762 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp4help\refacttp3\parser.h
+
+1592999762 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp4help\refacttp3\utn.h
+
+1593300692 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp4help\refacttp3\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+	"utn.h"
+
+1593300715 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp4help\refacttp3\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1593300736 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp4help\refacttp3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"utn.h"
+
+1592999762 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp4help\refacttp3\controller.h
+
+1592999762 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp4help\refacttp3\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1592999762 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\ztrabajos practicos\tp4help\refacttp3\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
